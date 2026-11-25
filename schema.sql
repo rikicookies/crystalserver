@@ -572,7 +572,7 @@ CREATE TABLE IF NOT EXISTS `house_lists` (
     KEY `house_id_index` (`house_id`),
     KEY `version` (`version`),
     CONSTRAINT `houses_list_house_fk`
-        FOREIGN KEY (`house_id`) REFERENCES `houses` (`id`)
+        FOREIGN KEY (`house_id`, `world_id`) REFERENCES `houses` (`id`, `world_id`)
         ON DELETE CASCADE,
     CONSTRAINT `house_lists_worlds_fk`
         FOREIGN KEY (`world_id`) REFERENCES `worlds` (`id`)
@@ -997,7 +997,7 @@ CREATE TABLE IF NOT EXISTS `tile_store` (
     `world_id` int(3) UNSIGNED NOT NULL DEFAULT 1,
     INDEX `house_id` (`house_id`),
     CONSTRAINT `tile_store_account_fk`
-        FOREIGN KEY (`house_id`) REFERENCES `houses` (`id`)
+        FOREIGN KEY (`house_id`, `world_id`) REFERENCES `houses` (`id`, `world_id`)
         ON DELETE CASCADE,
     CONSTRAINT `tile_store_worlds_fk`
         FOREIGN KEY (`world_id`) REFERENCES `worlds` (`id`)
