@@ -395,6 +395,7 @@ database_backup
 
 # CLION
 cmake-build-*
+/build-codex-x64-windows/
 /data/logs
 
 # macOS
